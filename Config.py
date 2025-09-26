@@ -50,9 +50,6 @@ def execute_command(event=None):
     else:
         output.insert(tk.END, f"Неизвестная команда: {command}\n")
 
-    # Прокручиваем вывод вниз (чтобы последняя команда всегда была видна)
-    output.see(tk.END)
-
     # Очищаем поле ввода
     entry.delete(0, tk.END)
 
