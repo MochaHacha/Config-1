@@ -15,15 +15,10 @@ def execute_command(event=None):
     # Добавляем введённую строку в историю (поле вывода)
     output.insert(tk.END, f"> {cmd_line}\n")
 
-    try:
-        # shlex.split разбивает строку на аргументы, учитывая кавычки
-        # Например: ls "My Folder" → ['ls', 'My Folder']
-        args = shlex.split(cmd_line)
-    except ValueError as e:
-        # Ошибка разбора строки (например, незакрытые кавычки)
-        output.insert(tk.END, f"Ошибка парсинга: {e}\n")
-        entry.delete(0, tk.END)
-        return
+    # shlex.split разбивает строку на аргументы, учитывая кавычки
+        
+    args = shlex.split(cmd_line)
+    
 
     if not args:
         entry.delete(0, tk.END)
